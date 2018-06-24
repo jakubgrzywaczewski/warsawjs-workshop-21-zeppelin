@@ -23,8 +23,8 @@ const styles = {
 class LoginPage extends Component {
     state = {
         submitting: false,
-        username: '',
-        password: ''
+        username: 'admin',
+        password: 'haselko123'
     };
 
     handleChangeUsername = event => {

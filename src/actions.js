@@ -24,3 +24,19 @@ export function login({ username, password }) {
 }
 
 export const logout = createAction(actionTypes.LOGOUT);
+export const startReadProjectList = createAction(actionTypes.READ_PROJECT_LIST_START);
+export const endReadProjectList = createAction(actionTypes.READ_PROJECT_LIST_END);
+
+export function getProjects() {
+    return (dispatch, getstate) => {
+        dispatch(startReadProjectList());
+        return api
+            .readPosts()
+            .then(response => {
+                dispatch(endReadProjectList(response.posts));
+            })
+            .catch(error => {
+                dispatch(endReadProjectList(new Error('some things happend')));
+            });
+    };
+}

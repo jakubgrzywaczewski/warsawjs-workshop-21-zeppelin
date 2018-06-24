@@ -1,3 +1,5 @@
 export const LOGIN_START = 'LOGIN_START';
 export const LOGIN_END = 'LOGIN_END';
 export const LOGOUT = 'LOGOUT';
+export const READ_PROJECT_LIST_START = 'READ_PROJECT_LIST_START';
+export const READ_PROJECT_LIST_END = 'READ_PROJECT_LIST_END';
